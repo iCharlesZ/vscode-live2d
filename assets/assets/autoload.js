@@ -28,6 +28,6 @@ addElement('script', './assets/jquery.min.js')
   .then(() => {
     loadlive2d(
       'live2d',
-      models[0].models[0].link
+      models[0].link
     );
   });
