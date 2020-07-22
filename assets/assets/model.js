@@ -12,11 +12,11 @@ var models = [
       },
       {
         name: '22',
-        link: 'models/bilibili-live/22/index.json'
+        link: 'models/bilibili/22/index.json'
       },
       {
         name: '33',
-        link: 'models/bilibili-live/33/index.json'
+        link: 'models/bilibili/33/index.json'
       }
     ]
   }

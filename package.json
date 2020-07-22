@@ -4,12 +4,17 @@
 	"description": "vscode看板娘",
 	"version": "0.0.1",
 	"publisher": "CharlesZ",
+	"repository": {
+        "type": "git",
+        "url": "git+https://github.com/CharlesZhang6/vscode-live2d.git"
+    },
 	"engines": {
 		"vscode": "^1.47.0"
 	},
 	"categories": [
 		"Other"
 	],
+	"icon": "assets/icon/icon.png",
 	"keywords": [
 		"vscode看板娘",
 		"看板娘",
@@ -19,36 +24,32 @@
 	"activationEvents": [
 		"*"
 	],
-	"main": "./extension.js",
+	"main": "./out/extension",
 	"contributes": {
-		"commands": [
+		"configuration": [
 			{
-				"command": "extension.vslive2d",
-				"title": "Hello vslive2d"
-			}
-		],
-		"configuration": {
-			"title": "vscode看板娘设置",
-			"type": "Object",
-			"properties": {
-				"vslive2d.enabled": {
-					"type": "boolean",
-					"default": true,
-					"description": "插件是否启用"
-				},
-				"vslive2d.model": {
-					"type": "string",
-					"enum": [
-						"shizuku",
-						"shizuku-pajama",
-						"22",
-						"33"
-					],
-					"default": "shizuku",
-					"description": "选哪个娘"
+				"title": "看板娘配置",
+				"type": "Object",
+				"properties": {
+					"vscode-live2d.enabled": {
+						"type": "boolean",
+						"default": true,
+						"description": "是否启用看板娘"
+					},
+					"vscode-live2d.model": {
+						"type": "string",
+						"enum": [
+							"shizuku",
+							"shizuku-pajama",
+							"bilibili-22",
+							"bilibili-33"
+						],
+						"default": "shizuku",
+						"description": "选哪个娘"
+					}
 				}
 			}
-		}
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
