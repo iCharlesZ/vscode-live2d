@@ -3,7 +3,7 @@
 一个简单的Live2D看板娘插件，会跟随你的鼠标动作变化，写代码累了可以逗逗她哦
 
 ## 效果
-![效果]("/res/assets/demo.png")
+![效果](https://charleszhang6.github.io/vscode-live2d/res/assets/demo.png)
 
 ## Uninstall 卸载
 
