@@ -2,7 +2,7 @@
 	"name": "vscode-live2d",
 	"displayName": "vscode-live2d",
 	"description": "vscode看板娘",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "CharlesZ",
 	"repository": {
 		"type": "git",
