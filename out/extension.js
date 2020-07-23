@@ -8,12 +8,18 @@ function createRegisterCommand(context) {
 exports.createRegisterCommand = createRegisterCommand;
 function activate(context) {
     let createCommand = createRegisterCommand(context);
-    Main.default.init();
+    // Main.default.init();
     createCommand('vscode-live2d.enabled', () => {
         vscode.workspace.getConfiguration('vscode-live2d').update('enabled', true);
     });
+    createCommand('vscode-live2d.enabledGlobal', () => {
+        vscode.workspace.getConfiguration('vscode-live2d').update('enabled', true, true);
+    });
     createCommand('vscode-live2d.unenabled', () => {
         vscode.workspace.getConfiguration('vscode-live2d').update('enabled', false);
+    });
+    createCommand('vscode-live2d.unenabledGlobal', () => {
+        vscode.workspace.getConfiguration('vscode-live2d').update('enabled', false, true);
     });
     context.subscriptions.push(vscode.workspace.onDidChangeConfiguration(eventNames => {
         Main.default.init();

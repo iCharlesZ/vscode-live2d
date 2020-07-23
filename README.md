@@ -5,7 +5,7 @@
 ## 效果
 ![效果](https://charleszhang6.github.io/vscode-live2d/res/assets/demo.png)
 
-## Uninstall 卸载
+## 卸载
 
 需要在 settings.json 中设置 {"vscode-live2d.enabled": false}，然后再删除插件。
 如果直接删除插件会有遗留。

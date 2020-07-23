@@ -32,8 +32,16 @@
 				"title": "启用看板娘"
 			},
 			{
+				"command": "vscode-live2d.enabledGlobal",
+				"title": "全局启用看板娘"
+			},
+			{
 				"command": "vscode-live2d.unenabled",
 				"title": "停用看板娘"
+			},
+			{
+				"command": "vscode-live2d.unenabledGlobal",
+				"title": "全局停用看板娘"
 			}
 		],
 		"configuration": [
