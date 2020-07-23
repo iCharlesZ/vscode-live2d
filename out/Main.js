@@ -1,10 +1,10 @@
 const vscode = require("vscode");
 const Tools = require("./tools");
-// const vsHelp = require("./vsHelp");
 const path = require("path");
+const vsHelp = require("./vsHelp");
 const fs = require("fs");
-// @ts-ignore
 const PACKAGE = require('../package.json');
+const modelConfigPath = path.join(__dirname, '../res/assets/modelConfig.js');
 function getConfig() {
     return vscode.workspace.getConfiguration(PACKAGE.displayName);
 }
@@ -17,7 +17,7 @@ class Main {
         this.install = () => {
             if (this.isInstall)
                 return;
-            Tools.copy(path.join(__dirname, '../assets/'), Tools.getBasePath());
+            Tools.copy(path.join(__dirname, '../res/'), Tools.getBasePath());
             this.insertJS();
         };
         this.uninstall = () => {
@@ -27,6 +27,12 @@ class Main {
             this.uninstall();
             let config = getConfig();
             if (config.get('enabled')) {
+                let content = `
+                const modelConfig = {
+                    modelName: "${config.get('model')}"
+                }
+                `
+                fs.writeFileSync(modelConfigPath, content, 'utf-8');
                 this.install();
             }
         };
@@ -34,7 +40,7 @@ class Main {
             if (this.isInstall)
                 return;
             var jsString = fs
-                .readFileSync(path.join(__dirname, '../resources/insertJS.js'))
+                .readFileSync(path.join(__dirname, './insertJS.js'))
                 .toString();
             var insertStr = `
         /*ext-${this.name}-start*/

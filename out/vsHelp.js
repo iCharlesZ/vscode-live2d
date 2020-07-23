@@ -1,9 +1,15 @@
 const vscode = require("vscode");
 
-const vsHelp = {
-    showInfo(content) {
-        return vscode.window.showInformationMessage(content);
-    }
+function showInfo(content) {
+    return vscode.window.showInformationMessage(content);
 }
+exports.showInfo = showInfo;
 
-export default vsHelp;
+function showInfoRestart(content) {
+    return vscode.window.showInformationMessage(content, { title: 'Restart vscode' })
+        .then(function (item) {
+            if (!item) return;
+            vscode.commands.executeCommand('workbench.action.reloadWindow');
+        });
+}
+exports.showInfoRestart = showInfoRestart;

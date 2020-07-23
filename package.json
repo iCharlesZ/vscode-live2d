@@ -2,19 +2,19 @@
 	"name": "vscode-live2d",
 	"displayName": "vscode-live2d",
 	"description": "vscode看板娘",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"publisher": "CharlesZ",
 	"repository": {
-        "type": "git",
-        "url": "git+https://github.com/CharlesZhang6/vscode-live2d.git"
-    },
+		"type": "git",
+		"url": "git+https://github.com/CharlesZhang6/vscode-live2d.git"
+	},
 	"engines": {
 		"vscode": "^1.47.0"
 	},
 	"categories": [
 		"Other"
 	],
-	"icon": "assets/icon/icon.png",
+	"icon": "res/icon/icon.png",
 	"keywords": [
 		"vscode看板娘",
 		"看板娘",
@@ -26,6 +26,16 @@
 	],
 	"main": "./out/extension",
 	"contributes": {
+		"commands": [
+			{
+				"command": "vscode-live2d.enabled",
+				"title": "启用看板娘"
+			},
+			{
+				"command": "vscode-live2d.unenabled",
+				"title": "停用看板娘"
+			}
+		],
 		"configuration": [
 			{
 				"title": "看板娘配置",

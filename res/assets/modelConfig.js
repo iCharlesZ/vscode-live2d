@@ -1,0 +1,3 @@
+const modelConfig = {
+    modelName: "shizuku"
+}
