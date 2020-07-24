@@ -28,34 +28,4 @@
   }
   seyRandom();
   setInterval(seyRandom, 60 * 1000);
-
-  $(document).on('copy', function() {
-    setTimeout(() => {
-      const text = require('electron').clipboard.readText();
-      fetch(`https://fanyi.baidu.com/transapi?query=${text}`)
-        .then(res => res.json())
-        .then(res => {
-          message.say(`${text}的翻译内容是: ${res.data[0].dst}`);
-        });
-    });
-  });
-  // 工具栏交互事件
-  $('.waifu-tool .fui-chat').click(seyRandom);
-  $('.waifu-tool .fui-photo').click(function() {
-    Live2D.captureName = '看板娘^-^!';
-    Live2D.captureFrame = true;
-  });
-  $('.waifu-tool .fui-user').click(function() {
-    let num = models[0].models.length;
-    loadlive2d(
-      'live2d',
-      models[0].models[Math.floor(Math.random() * num)].link
-    );
-  });
-  $('.waifu-tool .fui-home').click(function() {
-    $('.waifu').slideToggle();
-    setTimeout(() => {
-      $('.waifu').slideToggle();
-    }, 1000 * 60 * 5);
-  });
 })();
