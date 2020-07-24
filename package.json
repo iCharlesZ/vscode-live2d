@@ -2,7 +2,7 @@
 	"name": "vscode-live2d",
 	"displayName": "vscode-live2d",
 	"description": "vscode看板娘",
-	"version": "0.1.1",
+	"version": "0.1.11",
 	"publisher": "CharlesZ",
 	"repository": {
 		"type": "git",
@@ -27,23 +27,11 @@
 	"main": "./out/extension",
 	"contributes": {
 		"commands": [
-			{
-				"command": "vscode-live2d.enabled",
-				"title": "启用看板娘"
-			},
-			{
-				"command": "vscode-live2d.enabledGlobal",
-				"title": "全局启用看板娘"
-			},
-			{
-				"command": "vscode-live2d.unenabled",
-				"title": "停用看板娘"
-			},
-			{
-				"command": "vscode-live2d.unenabledGlobal",
-				"title": "全局停用看板娘"
-			}
-		],
+            {
+                "command": "extension.vscode-live2d",
+                "title": "Hello Live2D"
+            }
+        ],
 		"configuration": [
 			{
 				"title": "看板娘配置",
@@ -70,6 +58,7 @@
 		]
 	},
 	"scripts": {
+        "vscode:uninstall": "node ./out/uninstall",
 		"lint": "eslint .",
 		"pretest": "yarn run lint",
 		"test": "node ./test/runTest.js"

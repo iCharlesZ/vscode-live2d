@@ -2,7 +2,6 @@
 
 一个简单的Live2D看板娘插件，会跟随你的鼠标动作变化，写代码累了可以逗逗她哦
 GitHub: https://github.com/CharlesZhang6/vscode-live2d
-Vscode Market: https://marketplace.visualstudio.com/items?itemName=CharlesZ.vscode-live2d
 
 ## 效果
 ![效果](https://charleszhang6.github.io/vscode-live2d/res/assets/demo.png)
