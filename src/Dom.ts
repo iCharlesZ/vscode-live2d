@@ -1,7 +1,7 @@
-import path from 'path';
-import fs from 'fs';
+import * as vscode from 'vscode';
+import * as path from 'path';
+import * as fs from 'fs';
 import FileType from './FileType';
-import vscode from 'vscode';
 import vsHelp from './vsHelp';
 import getNewContent from './getJs';
 
@@ -36,7 +36,7 @@ export class Dom {
         let fileType = this.getFileType(); // css 文件目前状态
 
         // 如果是第一次加载插件，或者旧版本
-        if (firstload || fileType == FileType.isOld || fileType == FileType.empty) {
+        if (firstload || fileType === FileType.isOld || fileType === FileType.empty) {
             const base = path.dirname(require.main.filename);
             copy(path.join(__dirname, '../resources/assets/'), path.join(base, 'vs', 'code', 'electron-browser', 'workbench'));
             this.install(true);
@@ -52,12 +52,11 @@ export class Dom {
      */
     public install(refresh?: boolean): void {
 
-        /*
         let lastConfig = this.config;  // 之前的配置
         let config = vscode.workspace.getConfiguration(this.configName); // 当前用户配置
 
         // 1.如果配置文件改变到时候，当前插件配置没有改变，则返回
-        if (!refresh && JSON.stringify(lastConfig) == JSON.stringify(config)) {
+        if (!refresh && JSON.stringify(lastConfig) === JSON.stringify(config)) {
             // console.log('配置文件未改变.')
             return;
         }
@@ -92,7 +91,7 @@ export class Dom {
 
         this.saveContent(newContent);
         vsHelp.showInfoRestart(this.extName + ' 已更新配置，请重新启动！');
-        */
+
     }
 
 
@@ -157,7 +156,7 @@ export class Dom {
 
         if (info.firstload) {
             // 提示
-            vsHelp.showInfo('插件： ' + this.extName + '已启动! ')
+            vsHelp.showInfo('插件： ' + this.extName + '已启动! ');
             // 标识插件已启动过
             info.firstload = false;
             fs.writeFileSync(configPath, JSON.stringify(info, null, '    '), 'utf-8');
@@ -204,8 +203,7 @@ function copy(src: string, dst: string) {
         var _dst = dst + '/' + path;
         fs.stat(_src, function (err, stats) {
             //stats  该对象 包含文件属性
-            if (err)
-                throw err;
+            if (err) { throw err; }
             if (stats.isFile()) {
                 //如果是个文件则拷贝
                 let readable = fs.createReadStream(_src); //创建读取流

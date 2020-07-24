@@ -1,10 +1,10 @@
-export default function(config:any,extName:string,version:string):string{
-	let opacity:number = config.opacity;
-	let width:number = config.width
-	let height:number = config.height
-	let hOffset:number = config.hOffset
-	let vOffsett:number = config.vOffsett
-	let model:string = config.model;
+export default function (config: any, extName: string, version: string): string {
+	let opacity: number = config.opacity;
+	let width: number = config.width;
+	let height: number = config.height;
+	let hOffset: number = config.hOffset;
+	let vOffsett: number = config.vOffsett;
+	let model: string = config.model;
 
 	return `
 	/*ext-${extName}-start*/

@@ -1,5 +1,5 @@
-import path from 'path';
-import fs from 'fs';
+import * as path from 'path';
+import * as fs from 'fs';
 
 const base = process.cwd();
 // 文件路径
@@ -17,8 +17,8 @@ function main() {
         const base = path.dirname(require.main.filename);
         content = clearCssContent(content);
         saveContent(content);
-        removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'js'))
-        removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'models'))
+        removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'js'));
+        removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'models'));
         return true;
     }
     catch (ex) {

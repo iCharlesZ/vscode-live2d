@@ -1,4 +1,4 @@
-import vscode from 'vscode';
+import * as vscode from 'vscode';
 
 const vsHelp = {
     /**
@@ -20,10 +20,10 @@ const vsHelp = {
     showInfoRestart(content: any): Thenable<void> {
         return vscode.window.showInformationMessage(content, { title: "重新加载" })
             .then(function (item) {
-                if (!item) return;
+                if (!item) { return; }
                 vscode.commands.executeCommand('workbench.action.reloadWindow');
             });
     }
-}
+};
 
 export default vsHelp;
