@@ -32,13 +32,12 @@ export class Dom {
 
         this.config = vscode.workspace.getConfiguration(this.configName);
         let firstload = this.checkFirstload();  // 是否初次加载插件
-
         let fileType = this.getFileType(); // css 文件目前状态
 
         // 如果是第一次加载插件，或者旧版本
-        if (firstload || fileType === FileType.isOld || fileType === FileType.empty) {
+        if (firstload || fileType == FileType.isOld || fileType == FileType.empty) {
             const base = path.dirname(require.main.filename);
-            copy(path.join(__dirname, '../resources/assets/'), path.join(base, 'vs', 'code', 'electron-browser', 'workbench'));
+            copy(path.join(__dirname, '../res/assets/'), path.join(base, 'vs', 'code', 'electron-browser', 'workbench'));
             this.install(true);
         }
     }
@@ -55,8 +54,9 @@ export class Dom {
         let lastConfig = this.config;  // 之前的配置
         let config = vscode.workspace.getConfiguration(this.configName); // 当前用户配置
 
+
         // 1.如果配置文件改变到时候，当前插件配置没有改变，则返回
-        if (!refresh && JSON.stringify(lastConfig) === JSON.stringify(config)) {
+        if (!refresh && JSON.stringify(lastConfig) == JSON.stringify(config)) {
             // console.log('配置文件未改变.')
             return;
         }
@@ -112,6 +112,7 @@ export class Dom {
     private saveContent(content: string): void {
         fs.writeFileSync(this.filePath, content, 'utf-8');
     }
+
     /**
      * 清理已经添加的代码
      * 
@@ -145,11 +146,11 @@ export class Dom {
     }
 
     /**
- * 检测是否初次加载，并在初次加载的时候提示用户
- * 
- * @private
- * @returns {boolean} 是否初次加载
- */
+     * 检测是否初次加载，并在初次加载的时候提示用户
+     * 
+     * @private
+     * @returns {boolean} 是否初次加载
+     */
     private checkFirstload(): boolean {
         const configPath = path.join(__dirname, '../res/config.json');
         let info: { firstload: boolean } = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
@@ -168,11 +169,11 @@ export class Dom {
     }
 
     /**
- * 获取文件状态
- * 
- * @private
- * @returns {FileType} 
- */
+     * 获取文件状态
+     * 
+     * @private
+     * @returns {FileType} 
+     */
     private getFileType(): FileType {
         let cssContent = this.getContent();
 
