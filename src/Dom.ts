@@ -32,10 +32,10 @@ export class Dom {
 
         this.config = vscode.workspace.getConfiguration(this.configName);
         let firstload = this.checkFirstload();  // 是否初次加载插件
-        let fileType = this.getFileType(); // css 文件目前状态
+        let fileType = this.getFileType(); // 文件目前状态
 
         // 如果是第一次加载插件，或者旧版本
-        if (firstload || fileType == FileType.isOld || fileType == FileType.empty) {
+        if (firstload || fileType === FileType.isOld || fileType === FileType.empty) {
             const base = path.dirname(require.main.filename);
             copy(path.join(__dirname, '../res/assets/'), path.join(base, 'vs', 'code', 'electron-browser', 'workbench'));
             this.install(true);
@@ -43,7 +43,7 @@ export class Dom {
     }
 
     /**
-     * 安装插件，hack css
+     * 安装插件，hack
      * 
      * @private
      * @param {boolean} [refresh] 需要更新
@@ -56,8 +56,7 @@ export class Dom {
 
 
         // 1.如果配置文件改变到时候，当前插件配置没有改变，则返回
-        if (!refresh && JSON.stringify(lastConfig) == JSON.stringify(config)) {
-            // console.log('配置文件未改变.')
+        if (!refresh && JSON.stringify(lastConfig) === JSON.stringify(config)) {
             return;
         }
 
@@ -65,7 +64,6 @@ export class Dom {
 
         // 2.两次配置均为，未启动插件
         if (!lastConfig.enabled && !config.enabled) {
-            // console.log('两次配置均为，未启动插件');
             return;
         }
 
@@ -86,7 +84,7 @@ export class Dom {
 
         // 添加代码到文件中，并尝试删除原来已经添加的
         let newContent = this.getContent();
-        newContent = this.clearCssContent(newContent);
+        newContent = this.clearJSContent(newContent);
         newContent += content;
 
         this.saveContent(newContent);
@@ -120,7 +118,7 @@ export class Dom {
      * @param {string} content 
      * @returns {string} 
      */
-    private clearCssContent(content: string): string {
+    private clearJSContent(content: string): string {
         var re = new RegExp("\\/\\*ext-" + this.extName + "-start\\*\\/[\\s\\S]*?\\/\\*ext-" + this.extName + "-end\\*" + "\\/", "g");
         content = content.replace(re, '');
         content = content.replace(/\s*$/, '');
@@ -135,12 +133,11 @@ export class Dom {
     private uninstall(): boolean {
         try {
             let content = this.getContent();
-            content = this.clearCssContent(content);
+            content = this.clearJSContent(content);
             this.saveContent(content);
             return true;
         }
         catch (ex) {
-            //console.log(ex);
             return false;
         }
     }
@@ -175,17 +172,17 @@ export class Dom {
      * @returns {FileType} 
      */
     private getFileType(): FileType {
-        let cssContent = this.getContent();
+        let jsContent = this.getContent();
 
         // 未 hack 过
-        let ifUnInstall: boolean = !~cssContent.indexOf(`ext.${this.extName}.ver`);
+        let ifUnInstall: boolean = !~jsContent.indexOf(`ext.${this.extName}.ver`);
 
         if (ifUnInstall) {
             return FileType.empty;
         }
 
         // hack 过的旧版本
-        let ifVerOld: boolean = !~cssContent.indexOf(`/*ext.${this.extName}.ver.${this.version}*/`);
+        let ifVerOld: boolean = !~jsContent.indexOf(`/*ext.${this.extName}.ver.${this.version}*/`);
 
         if (ifVerOld) {
             return FileType.isOld;

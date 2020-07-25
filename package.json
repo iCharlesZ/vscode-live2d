@@ -2,7 +2,7 @@
 	"name": "vscode-live2d",
 	"displayName": "vscode-live2d",
 	"description": "vscode看板娘",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"publisher": "CharlesZ",
 	"repository": {
 		"type": "git",
@@ -26,12 +26,6 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "vscode-live2d.helloWorld",
-				"title": "Hello Live2D"
-			}
-		],
 		"configuration": [
 			{
 				"title": "看板娘配置",
@@ -48,10 +42,21 @@
 							"shizuku",
 							"shizuku-pajama",
 							"bilibili-22",
-							"bilibili-33"
+							"bilibili-33",
+							"Pio",
+							"Tia",
+							"noir",
+							"nepnep",
+							"nepmaid",
+							"nepgear"
 						],
 						"default": "shizuku",
 						"description": "选哪个娘"
+					},
+					"vscode-live2d.modelUrl": {
+						"type": "string",
+						"default": "",
+						"description": "自定义导入喜欢的模型url，错误的url会导致看板娘无法正常显示"
 					}
 				}
 			}

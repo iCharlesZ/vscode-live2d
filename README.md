@@ -30,6 +30,7 @@ see here: https://github.com/lehni/vscode-fix-checksums
 |-----|------------
 |`vscode-live2d.enabled`| true:启用插件、false:禁用插件
 |`vscode-live2d.model`| 选择看板娘模型
+|`vscode-live2d.modelUrl`| 自定义导入模型url
 
 ## Q&A 常见问题:
 
@@ -48,6 +49,12 @@ see here: https://github.com/lehni/vscode-fix-checksums
 ---
 
 ## Release Notes
+
+### 1.1.0 | 2020-07-25
+
+- 添加了更多的妹子模型
+- 减少了本地模型数量，改成联网获取model，安装插件更快了(切换模型一定要联网)
+- 支持以url形式自定义导入live2d模型
 
 ### 1.0.0 | 2020-07-25
 
