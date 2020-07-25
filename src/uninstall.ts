@@ -17,7 +17,7 @@ function main() {
         const base = path.dirname(require.main.filename);
         content = clearCssContent(content);
         saveContent(content);
-        removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'js'));
+        removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'live2d'));
         removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'models'));
         return true;
     }

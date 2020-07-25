@@ -7,10 +7,8 @@ import { Dom } from './Dom';
 export class Main {
 	public static watch(): vscode.Disposable {
 		const base = path.dirname(require.main.filename);
-
-		// 文件路径
 		const filePath = path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'workbench.js');
-		const extName = "live2d";
+		const extName = "vscode-live2d";
 		let DomApi = new Dom(extName, filePath, version, extName);
 		return vscode.workspace.onDidChangeConfiguration(() => DomApi.install());
 	}
