@@ -12,6 +12,7 @@ Vscode Market: https://marketplace.visualstudio.com/items?itemName=CharlesZ.vsco
 ## 安装与卸载
 
 如果是以System身份安装的VSCode，则需要以管理员身份运行VSCode才可以正常使用看板娘插件。
+
 卸载前需要在设置里将看板娘设置成关闭。或者在 settings.json 中设置 {"vscode-live2d.enabled": false}，然后再卸载插件。如果直接删除插件会有遗留。
 
 ## 警告
