@@ -7,7 +7,7 @@ GitHub: https://github.com/iCharlesZ/vscode-live2d
 VSCode Market: https://marketplace.visualstudio.com/items?itemName=CharlesZ.vscode-live2d
 
 ## 效果
-![效果](./res/demo-min.gif)
+![效果](./res/demo.gif)
 
 ## 安装与卸载
 
