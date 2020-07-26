@@ -4,10 +4,6 @@
 	"description": "vscode看板娘",
 	"version": "1.1.0",
 	"publisher": "CharlesZ",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/CharlesZhang6/vscode-live2d.git"
-	},
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -62,6 +58,15 @@
 			}
 		]
 	},
+	"bugs": {
+		"url": "https://github.com/iCharlesZ/vscode-live2d/issues",
+		"email": "admin@zhchi.me"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/CharlesZhang6/vscode-live2d.git"
+	},
+	"homepage": "https://github.com/iCharlesZ/vscode-live2d/blob/master/README.md",
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
 		"vscode:uninstall": "node ./out/uninstall",
