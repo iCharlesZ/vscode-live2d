@@ -2,7 +2,7 @@
 	"name": "vscode-live2d",
 	"displayName": "vscode-live2d",
 	"description": "vscode看板娘",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"publisher": "CharlesZ",
 	"engines": {
 		"vscode": "^1.47.0"
@@ -44,7 +44,10 @@
 							"noir",
 							"nepnep",
 							"nepmaid",
-							"nepgear"
+							"nepgear",
+							"vert",
+							"tororo",
+							"hijiki"
 						],
 						"default": "shizuku",
 						"description": "选哪个娘"
@@ -53,6 +56,41 @@
 						"type": "string",
 						"default": "",
 						"description": "自定义导入喜欢的模型url，错误的url会导致看板娘无法正常显示"
+					},
+					"vscode-live2d.modelWidth": {
+						"type": "integer",
+						"maximum": 500,
+						"minimum": 100,
+						"default": 280,
+						"description": "看板娘宽度 default: 280"
+					},
+					"vscode-live2d.modelHeight": {
+						"type": "integer",
+						"maximum": 500,
+						"minimum": 100,
+						"default": 250,
+						"description": "看板娘高度 default: 250"
+					},
+					"vscode-live2d.moveX": {
+						"type": "integer",
+						"maximum": 500,
+						"minimum": -100,
+						"default": 0,
+						"description": "看板娘水平位置 default: 0"
+					},
+					"vscode-live2d.moveY": {
+						"type": "integer",
+						"maximum": 500,
+						"minimum": -150,
+						"default": 0,
+						"description": "看板娘垂直位置 default: 0"
+					},
+					"vscode-live2d.opacity": {
+						"type": "number",
+						"maximum": 1,
+						"minimum": 0.1,
+						"default": 1,
+						"description": "看板娘透明度"
 					}
 				}
 			}

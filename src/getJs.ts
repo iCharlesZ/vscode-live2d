@@ -1,6 +1,11 @@
 export default function (config: any, extName: string, version: string): string {
 	let model: string = config.model;
 	let modelUrl: string = config.modelUrl;
+	let modelWidth: number = config.modelWidth;
+	let modelHeight: number = config.modelHeight;
+	let moveX: number = config.moveX;
+	let moveY: number = config.moveY;
+	let opacity: number = config.opacity;
 	let live2dLink = customizeModel(modelUrl, model);
 
 	return `
@@ -19,7 +24,7 @@ export default function (config: any, extName: string, version: string): string 
 		});
 	}
 	var tempDiv = document.createElement('div');
-	tempDiv.innerHTML = '<div class="waifu"><div class="waifu-tips"></div><canvas id="live2d" width="300" height="300" class="live2d"></canvas></div>';
+	tempDiv.innerHTML = '<div class="waifu" style="right: ${moveX + 70}px; bottom: ${moveY + 26}px; opacity: ${opacity}"><div class="waifu-tips" style="transform: translateX(-50%) scale(${modelWidth / 280})"></div><canvas id="live2d" width="${modelWidth}" height="${modelHeight}" class="live2d"></canvas></div>';
 	document.body.appendChild(tempDiv.children[0]);
 	
 	addElement('link', './live2d/waifu.css');
@@ -61,6 +66,12 @@ function customizeModel(modelUrl: string, model: string) {
 				return 'https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/model/HyperdimensionNeptunia/nepmaid/index.json';
 			case 'nepgear':
 				return 'https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/model/HyperdimensionNeptunia/nepgear/index.json';
+			case 'vert':
+				return 'https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/model/HyperdimensionNeptunia/vert_swimwear/index.json';
+			case 'tororo':
+				return 'https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json';
+			case 'hijiki':
+				return 'https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json';
 			default:
 				return '';
 		}
