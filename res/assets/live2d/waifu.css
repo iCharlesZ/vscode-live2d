@@ -1,7 +1,5 @@
 .waifu {
   position: fixed;
-  bottom: 26px;
-  right: 70px;
   z-index: 3;
   font-size: 0;
   -webkit-transform: translateY(3px);
@@ -10,15 +8,14 @@
 
 .waifu-tips {
   color: #fff;
-  width: 300px;
+  width: 280px;
   transition: 0.5s all;
-  bottom: 100%;
-  left: -10px;
   text-align: center;
   font-size: 13px;
   font-weight: 400;
-
   position: absolute;
+  bottom: 100%;
+  left: 50%;
 }
 .waifu-tip-item {
   border: 1px solid rgba(255, 137, 255, 0.4);

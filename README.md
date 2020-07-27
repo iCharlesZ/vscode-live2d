@@ -31,6 +31,11 @@ see here: https://github.com/lehni/vscode-fix-checksums
 |`vscode-live2d.enabled`| true:启用插件、false:禁用插件
 |`vscode-live2d.model`| 选择看板娘模型
 |`vscode-live2d.modelUrl`| 自定义导入模型url
+|`vscode-live2d.modelWidth`| 自定义看板娘宽度
+|`vscode-live2d.modelHeight`| 自定义看板娘高度
+|`vscode-live2d.moveX`| 自定义看板娘水平位置
+|`vscode-live2d.moveY`| 自定义看板娘垂直位置
+|`vscode-live2d.opacity`| 设置看板娘透明度
 
 ## Q&A 常见问题:
 
@@ -49,6 +54,12 @@ see here: https://github.com/lehni/vscode-fix-checksums
 ---
 
 ## Release Notes
+
+### 1.2.0 | 2020-07-27
+
+- 增加看板娘宽度高度设置
+- 增加看板娘水平垂直位置设置
+- 增加看板娘透明度设置
 
 ### 1.1.0 | 2020-07-25
 
