@@ -24,19 +24,18 @@ export default function (config: any, extName: string, version: string): string 
 		});
 	}
 	var tempDiv = document.createElement('div');
-	tempDiv.innerHTML = '<div class="waifu" style="right: ${moveX + 70}px; bottom: ${moveY + 26}px; opacity: ${opacity}"><div class="waifu-tips" style="transform: translateX(-50%) scale(${modelWidth / 280})"></div><canvas id="live2d" width="${modelWidth}" height="${modelHeight}" class="live2d"></canvas></div>';
+	tempDiv.innerHTML = '<div id="waifu" style="right: ${moveX + 70}px; bottom: ${moveY + 26}px; opacity: ${opacity}"><div id="waifu-tips" style="transform: translateX(-50%) scale(${modelWidth / 280})"></div><canvas id="live2d" width="${modelWidth}" height="${modelHeight}"></canvas></div>';
 	document.body.appendChild(tempDiv.children[0]);
 	
 	addElement('link', './live2d/waifu.css');
-	addElement('script', './live2d/jquery.min.js')
-	.then(() => addElement('script', './live2d/live2d.js'))
-	.then(() => addElement('script', './live2d/message.js'))
-	.then(() => {
-		loadlive2d(
-			'live2d', 
-			'${live2dLink}'
-			);
-		});
+	addElement('script', './live2d/live2d.js')
+		.then(() => addElement('script', './live2d/message.js'))
+		.then(() => {
+			loadlive2d(
+				'live2d', 
+				'${live2dLink}'
+				);
+			});
 	/*ext-${extName}-end*/
 	`;
 }
