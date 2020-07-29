@@ -11,6 +11,8 @@ VSCode Market: https://marketplace.visualstudio.com/items?itemName=CharlesZ.vsco
 
 ## 安装与卸载
 
+需要 VSCode 1.47.0 以上版本才可以安装此插件！
+
 如果是以System身份安装的VSCode，则需要以管理员身份运行VSCode才可以正常使用看板娘插件。
 
 卸载前需要在设置里将看板娘设置成关闭。或者在 settings.json 中设置 {"vscode-live2d.enabled": false}，然后再卸载插件。如果直接删除插件会有遗留。
@@ -54,6 +56,11 @@ see here: https://github.com/lehni/vscode-fix-checksums
 ---
 
 ## Release Notes
+
+### 1.3.0 | 2020-07-29
+
+- 移除jQuery相关
+- 添加与看板娘的鼠标交互
 
 ### 1.2.0 | 2020-07-27
 
