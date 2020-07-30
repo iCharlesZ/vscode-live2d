@@ -4,7 +4,9 @@
 
 GitHub: https://github.com/iCharlesZ/vscode-live2d
 
-VSCode Market: https://marketplace.visualstudio.com/items?itemName=CharlesZ.vscode-live2d
+VSCode Marketplace: https://marketplace.visualstudio.com/items?itemName=CharlesZ.vscode-live2d
+
+model library: https://github.com/iCharlesZ/vscode-live2d-models
 
 ## 效果
 ![效果](./res/demo.gif)
