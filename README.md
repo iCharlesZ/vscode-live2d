@@ -1,6 +1,6 @@
 # Live2D看板娘 for VSCode
 
-一个简单的Live2D看板娘插件，会跟随你的鼠标动作变化，写代码累了可以逗逗她哦
+一个简单的Live2D看板娘插件，会跟随你的鼠标动作变化，写代码累了可以逗逗她哦。支持自定义设置live2d模型。
 
 GitHub: https://github.com/iCharlesZ/vscode-live2d
 
