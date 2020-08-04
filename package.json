@@ -2,7 +2,7 @@
 	"name": "vscode-live2d",
 	"displayName": "vscode-live2d",
 	"description": "vscode看板娘",
-	"version": "1.3.1",
+	"version": "1.4.0",
 	"publisher": "CharlesZ",
 	"engines": {
 		"vscode": "^1.47.0"
@@ -60,29 +60,29 @@
 					},
 					"vscode-live2d.modelWidth": {
 						"type": "integer",
-						"maximum": 500,
-						"minimum": 100,
+						"maximum": 1000,
+						"minimum": 50,
 						"default": 280,
 						"description": "看板娘宽度 default: 280"
 					},
 					"vscode-live2d.modelHeight": {
 						"type": "integer",
-						"maximum": 500,
-						"minimum": 100,
+						"maximum": 1000,
+						"minimum": 50,
 						"default": 250,
 						"description": "看板娘高度 default: 250"
 					},
 					"vscode-live2d.moveX": {
 						"type": "integer",
-						"maximum": 500,
-						"minimum": -100,
+						"maximum": 2000,
+						"minimum": -1000,
 						"default": 0,
 						"description": "看板娘水平位置 default: 0"
 					},
 					"vscode-live2d.moveY": {
 						"type": "integer",
-						"maximum": 500,
-						"minimum": -150,
+						"maximum": 2000,
+						"minimum": -1000,
 						"default": 0,
 						"description": "看板娘垂直位置 default: 0"
 					},
@@ -92,6 +92,20 @@
 						"minimum": 0.1,
 						"default": 1,
 						"description": "看板娘透明度"
+					},
+					"vscode-live2d.pointerPenetration": {
+						"type": "boolean",
+						"default": false,
+						"description": "看板娘鼠标穿透(会影响看板娘鼠标交互)"
+					},
+					"vscode-live2d.position": {
+						"type": "string",
+						"enum": [
+							"right",
+							"left"
+						],
+						"default": "right",
+						"description": "看板娘定位"
 					}
 				}
 			}
