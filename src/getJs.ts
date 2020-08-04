@@ -8,6 +8,7 @@ export default function (config: any, extName: string, version: string): string 
 	let opacity: number = config.opacity;
 	let pointerPenetration: boolean = config.pointerPenetration;
 	let position: string = config.position;
+	let talk: string = config.talk;
 	let live2dLink = customizeModel(modelUrl, model);
 
 	return `
@@ -31,7 +32,7 @@ export default function (config: any, extName: string, version: string): string 
 	
 	addElement('link', './live2d/waifu.css');
 	addElement('script', './live2d/live2d.js')
-		.then(() => addElement('script', './live2d/message.js'))
+		${talk ? ".then(() => addElement('script', './live2d/message.js'))" : ''}
 		.then(() => {
 			loadlive2d(
 				'live2d', 

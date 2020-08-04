@@ -42,6 +42,7 @@ see here: https://github.com/lehni/vscode-fix-checksums
 |`vscode-live2d.opacity`| 设置看板娘透明度
 |`vscode-live2d.pointerPenetration`| 设置看板娘鼠标穿透
 |`vscode-live2d.position`| 设置看板娘左右定位
+|`vscode-live2d.talk`| 看板娘对话气泡开关
 
 ## Q&A 常见问题:
 
@@ -60,6 +61,10 @@ see here: https://github.com/lehni/vscode-fix-checksums
 ---
 
 ## Release Notes
+
+### 1.5.0 | 2020-08-04
+
+- 增加看板娘对话气泡开关
 
 ### 1.4.0 | 2020-08-04
 
