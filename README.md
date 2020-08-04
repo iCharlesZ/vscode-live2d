@@ -40,6 +40,8 @@ see here: https://github.com/lehni/vscode-fix-checksums
 |`vscode-live2d.moveX`| 自定义看板娘水平位置
 |`vscode-live2d.moveY`| 自定义看板娘垂直位置
 |`vscode-live2d.opacity`| 设置看板娘透明度
+|`vscode-live2d.pointerPenetration`| 设置看板娘鼠标穿透
+|`vscode-live2d.position`| 设置看板娘左右定位
 
 ## Q&A 常见问题:
 
@@ -58,6 +60,13 @@ see here: https://github.com/lehni/vscode-fix-checksums
 ---
 
 ## Release Notes
+
+### 1.4.0 | 2020-08-04
+
+- 增加看板娘鼠标穿透选项(开启穿透会影响看板娘鼠标交互)
+- 增加看板娘定位right，left选项
+- 调整看板娘大小设置最大最小值
+- 调整看板娘位置设置最大最小值
 
 ### 1.3.0 | 2020-07-29
 

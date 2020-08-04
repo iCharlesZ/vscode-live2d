@@ -6,6 +6,8 @@ export default function (config: any, extName: string, version: string): string 
 	let moveX: number = config.moveX;
 	let moveY: number = config.moveY;
 	let opacity: number = config.opacity;
+	let pointerPenetration: boolean = config.pointerPenetration;
+	let position: string = config.position;
 	let live2dLink = customizeModel(modelUrl, model);
 
 	return `
@@ -24,7 +26,7 @@ export default function (config: any, extName: string, version: string): string 
 		});
 	}
 	var tempDiv = document.createElement('div');
-	tempDiv.innerHTML = '<div id="waifu" style="right: ${moveX + 70}px; bottom: ${moveY + 26}px; opacity: ${opacity}"><div id="waifu-tips" style="transform: translateX(-50%) scale(${modelWidth / 280})"></div><canvas id="live2d" width="${modelWidth}" height="${modelHeight}"></canvas></div>';
+	tempDiv.innerHTML = '<div id="waifu" style="${position}: ${moveX + 70}px; bottom: ${moveY + 20}px; opacity: ${opacity}; pointer-events: ${pointerPenetration ? 'none' : 'auto'}"><div id="waifu-tips" style="transform: translateX(-50%) scale(${modelWidth / 280})"></div><canvas id="live2d" width="${modelWidth}" height="${modelHeight}"></canvas></div>';
 	document.body.appendChild(tempDiv.children[0]);
 	
 	addElement('link', './live2d/waifu.css');

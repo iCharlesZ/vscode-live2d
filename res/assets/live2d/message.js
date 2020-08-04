@@ -40,7 +40,7 @@
       clearInterval(userActionTimer);
       userActionTimer = null;
     } else if (!userActionTimer) {
-      userActionTimer = setInterval(sayRandom, 60 * 1000);
+      userActionTimer = setInterval(sayRandom, 30 * 1000);
     }
   }, 1000);
 
