@@ -6,11 +6,15 @@ export default function (config: any, extName: string, version: string): string 
 	let moveX: number = config.moveX;
 	let moveY: number = config.moveY;
 	let opacity: number = config.opacity;
+	let pointerOverHidden: boolean = config.pointerOverHidden;
 	let pointerPenetration: boolean = config.pointerPenetration;
 	let position: string = config.position;
 	let talk: string = config.talk;
 	let live2dLink = customizeModel(modelUrl, model);
 
+	if (pointerOverHidden) {
+		pointerPenetration = true;
+	}
 	return `
 	/*ext-${extName}-start*/
 	/*ext.${extName}.ver.${version}*/
@@ -27,8 +31,51 @@ export default function (config: any, extName: string, version: string): string 
 		});
 	}
 	var tempDiv = document.createElement('div');
-	tempDiv.innerHTML = '<div id="waifu" style="${position}: ${moveX + 70}px; bottom: ${moveY + 20}px; opacity: ${opacity}; pointer-events: ${pointerPenetration ? 'none' : 'auto'}"><div id="waifu-tips" style="transform: translateX(-50%) scale(${modelWidth / 280})"></div><canvas id="live2d" width="${modelWidth}" height="${modelHeight}"></canvas></div>';
-	document.body.appendChild(tempDiv.children[0]);
+	tempDiv.innerHTML = '<div id="waifu" style="${position}: ${moveX + 70}px; bottom: ${moveY + 20}px; opacity: ${opacity}; transition: opacity 300ms ease-in-out; pointer-events: ${pointerPenetration ? 'none' : 'auto'}"><div id="waifu-tips" style="transform: translateX(-50%) scale(${modelWidth / 280})"></div><canvas id="live2d" width="${modelWidth}" height="${modelHeight}"></canvas></div>';
+	var waifu = document.body.appendChild(tempDiv.children[0]);
+
+	if (${pointerOverHidden}) {
+		// 用 waifu 上的鼠标事件来做，无法同时实现穿透效果，算坐标是最简单的方案
+		var tid, flag;
+		document.body.addEventListener("mousemove", function(e) {
+			var _pointerOverHidden = () => {
+				var cursorX = e.clientX;
+				var cursorY = e.clientY;
+				var minX = waifu.offsetLeft;
+				var maxX = minX + waifu.clientWidth;
+				var minY = waifu.offsetTop;
+				var maxY = minY + waifu.clientHeight;
+				if (cursorX >= minX && cursorX <= maxX && cursorY >= minY && cursorY <= maxY) {
+					if (!waifu.over) {
+						waifu.style.opacity = '0';
+						waifu.over = true
+					}
+				} else {
+					if (waifu.over) {
+						waifu.style.opacity = '${opacity}';
+						waifu.over = false
+					}
+				}
+			}
+
+			// 实现一个简单的 throttle 来降低开销
+			if (!tid) {
+				if (!flag) {
+					_pointerOverHidden();
+				}
+				tid = setTimeout(() => {
+					clearTimeout(tid);
+					tid = null;
+					if (flag) {
+						_pointerOverHidden();
+						flag = false;
+					}
+				}, 300);
+			} else {
+				flag = true;
+			}
+		});
+	}
 	
 	addElement('link', './live2d/waifu.css');
 	addElement('script', './live2d/live2d.js')

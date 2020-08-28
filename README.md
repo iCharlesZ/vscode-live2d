@@ -40,6 +40,7 @@ see here: https://github.com/lehni/vscode-fix-checksums
 |`vscode-live2d.moveX`| 自定义看板娘水平位置
 |`vscode-live2d.moveY`| 自定义看板娘垂直位置
 |`vscode-live2d.opacity`| 设置看板娘透明度
+|`vscode-live2d.pointerOverHidden`| 鼠标移至上方时隐藏看板娘
 |`vscode-live2d.pointerPenetration`| 设置看板娘鼠标穿透
 |`vscode-live2d.position`| 设置看板娘左右定位
 |`vscode-live2d.talk`| 看板娘对话气泡开关
@@ -61,6 +62,8 @@ see here: https://github.com/lehni/vscode-fix-checksums
 ---
 
 ## Release Notes
+
+（TODO：请自行提供更新日志）
 
 ### 1.5.0 | 2020-08-04
 
