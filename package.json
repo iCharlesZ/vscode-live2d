@@ -2,7 +2,7 @@
 	"name": "vscode-live2d",
 	"displayName": "vscode-live2d",
 	"description": "vscode看板娘",
-	"version": "1.6.0",
+	"version": "1.6.101",
 	"publisher": "CharlesZ",
 	"engines": {
 		"vscode": "^1.47.0"
@@ -16,7 +16,11 @@
 		"看板娘",
 		"kanbanniang",
 		"live2d",
-		"canvas"
+		"canvas",
+		"Rainbow-Fart",
+		"fart",
+		"彩虹屁",
+		"vtuber"
 	],
 	"activationEvents": [
 		"*"
