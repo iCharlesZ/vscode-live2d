@@ -2,7 +2,7 @@
 	"name": "vscode-live2d",
 	"displayName": "vscode-live2d",
 	"description": "vscode看板娘",
-	"version": "1.6.112",
+	"version": "1.7.0",
 	"publisher": "CharlesZ",
 	"engines": {
 		"vscode": "^1.47.0"
@@ -35,6 +35,11 @@
 						"type": "boolean",
 						"default": true,
 						"description": "是否启用看板娘"
+					},
+					"vscode-live2d.English": {
+						"type": "boolean",
+						"default": false,
+						"description": "Use English"
 					},
 					"vscode-live2d.model": {
 						"type": "string",
