@@ -19,10 +19,15 @@ model library: https://github.com/iCharlesZ/vscode-live2d-models
 
 卸载前需要在设置里将看板娘设置成关闭。或者在 settings.json 中设置 {"vscode-live2d.enabled": false}，然后再卸载插件。如果直接删除插件会有遗留。
 
+tips: 如果找不到设置面板在哪，可点击左下角 “小齿轮——设置” 打开设置面板(确保活动栏: activity bar是打开状态)，然后搜索 "@ext:charlesz.vscode-live2d" 即可看到vscode-live2d设置选项。
+或者点击左边活动栏(activity bar)中的扩展(extension)找到vscode-live2d，点击右下角的小齿轮选择扩展设置也能直接进入设置选项。
+
 ## 警告
 
 > **本插件是通过修改 VSCode 的 javascript 文件的方式运行**
-> 所以会在初次安装，或者 VSCode 升级的时候，会出现损坏提示，请选择 【不再提示】:
+> 所以会在初次安装，或者 VSCode 升级的时候，会出现损坏提示，请选择 【不再提示】。
+
+> #### 如果实在介意此提示请不要安装此扩展！！！
 
 How to remove [unsupported] tag? 怎么去除顶部的[不受支持]的标志？
 
