@@ -10,6 +10,7 @@ export default function (config: any, extName: string, version: string): string 
 	let pointerPenetration: boolean = config.pointerPenetration;
 	let position: string = config.position;
 	let talk: string = config.talk;
+	let useEnglish: boolean = config.English;
 	let live2dLink = customizeModel(modelUrl, model);
 
 	if (pointerOverHidden) {
@@ -79,7 +80,7 @@ export default function (config: any, extName: string, version: string): string 
 	
 	addElement('link', './live2d/waifu.css');
 	addElement('script', './live2d/live2d.js')
-		${talk ? ".then(() => addElement('script', './live2d/message.js'))" : ''}
+		${talk ? useEnglish ? ".then(() => addElement('script', './live2d/message_en.js'))" : ".then(() => addElement('script', './live2d/message.js'))" : ''}
 		.then(() => {
 			loadlive2d(
 				'live2d', 
