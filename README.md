@@ -8,7 +8,7 @@ VSCode Marketplace: https://marketplace.visualstudio.com/items?itemName=CharlesZ
 
 model library: https://github.com/iCharlesZ/vscode-live2d-models
 
-**If you want to use the English version, please select {"vscode-live2d.enabled": true}.** English translation is not perfect, Please help me improve the translation.
+**If you want to use the English version, please select {"vscode-live2d.English": true}.**  English translation is not perfect, Please help me improve the translation.
 
 <br />
 
