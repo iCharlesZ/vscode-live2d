@@ -83,6 +83,10 @@ A: see here: https://github.com/lehni/vscode-fix-checksums
 
 ## Release Notes 版本说明
 
+### 1.8.0 | 2021-11-29
+
+- 修复新版本 VSCode 不能正常显示的问题
+
 ### 1.7.0 | 2020-11-19
 
 - 增加英文版本

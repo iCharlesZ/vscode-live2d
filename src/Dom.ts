@@ -4,6 +4,8 @@ import * as fs from 'fs';
 import FileType from './FileType';
 import vsHelp from './vsHelp';
 import getNewContent from './getJs';
+import getNewHTML from './allowScript';
+import getOriginalHtml from './originalHtml';
 
 export class Dom {
     //当前用户配置
@@ -88,6 +90,12 @@ export class Dom {
         newContent += content;
 
         this.saveContent(newContent);
+
+        // 设置新的HTML
+        let newHTML = getNewHTML().replace(/\s*$/, '');
+        const htmlPath = path.join(path.dirname(require.main.filename), 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html');
+        fs.writeFileSync(htmlPath, newHTML, 'utf-8');
+
         vsHelp.showInfoRestart(this.extName + ' 已更新配置，请重新启动！');
 
     }
@@ -135,6 +143,12 @@ export class Dom {
             let content = this.getContent();
             content = this.clearJSContent(content);
             this.saveContent(content);
+
+            // 还原HTML
+            let originalHtml = getOriginalHtml().replace(/\s*$/, '');
+            const htmlPath = path.join(path.dirname(require.main.filename), 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html');
+            fs.writeFileSync(htmlPath, originalHtml, 'utf-8');
+
             return true;
         }
         catch (ex) {
