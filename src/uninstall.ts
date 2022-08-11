@@ -4,7 +4,7 @@ import getOriginalHtml from './originalHtml';
 
 const base = process.cwd();
 // 文件路径
-const filePath = path.join(base, 'resources', 'app', 'out', 'vs', 'code', 'electron-browser', 'workbench', 'workbench.js');
+const filePath = path.join(base, 'resources', 'app', 'out', 'vs', 'code', 'electron-sandbox', 'workbench', 'workbench.js');
 const extName = "vscode-live2d";
 
 
@@ -18,12 +18,12 @@ function main() {
         const base = path.dirname(require.main.filename);
         content = clearCssContent(content);
         saveContent(content);
-        removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'live2d'));
-        removeFiles(path.join(base, 'vs', 'code', 'electron-browser', 'workbench', 'models'));
+        removeFiles(path.join(base, 'vs', 'code', 'electron-sandbox', 'workbench', 'live2d'));
+        removeFiles(path.join(base, 'vs', 'code', 'electron-sandbox', 'workbench', 'models'));
 
         // 还原HTML
         let originalHtml = getOriginalHtml().replace(/\s*$/, '');
-        const htmlPath = path.join(path.dirname(require.main.filename), 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html');
+        const htmlPath = path.join(path.dirname(require.main.filename), 'vs', 'code', 'electron-sandbox', 'workbench', 'workbench.html');
         fs.writeFileSync(htmlPath, originalHtml, 'utf-8');
 
         return true;

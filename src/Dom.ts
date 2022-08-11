@@ -39,7 +39,7 @@ export class Dom {
         // 如果是第一次加载插件，或者旧版本
         if (firstload || fileType === FileType.isOld || fileType === FileType.empty) {
             const base = path.dirname(require.main.filename);
-            copy(path.join(__dirname, '../res/assets/'), path.join(base, 'vs', 'code', 'electron-browser', 'workbench'));
+            copy(path.join(__dirname, '../res/assets/'), path.join(base, 'vs', 'code', 'electron-sandbox', 'workbench'));
             this.install(true);
         }
     }
@@ -93,7 +93,7 @@ export class Dom {
 
         // 设置新的HTML
         let newHTML = getNewHTML().replace(/\s*$/, '');
-        const htmlPath = path.join(path.dirname(require.main.filename), 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html');
+        const htmlPath = path.join(path.dirname(require.main.filename), 'vs', 'code', 'electron-sandbox', 'workbench', 'workbench.html');
         fs.writeFileSync(htmlPath, newHTML, 'utf-8');
 
         vsHelp.showInfoRestart(this.extName + ' 已更新配置，请重新启动！');
@@ -146,7 +146,7 @@ export class Dom {
 
             // 还原HTML
             let originalHtml = getOriginalHtml().replace(/\s*$/, '');
-            const htmlPath = path.join(path.dirname(require.main.filename), 'vs', 'code', 'electron-browser', 'workbench', 'workbench.html');
+            const htmlPath = path.join(path.dirname(require.main.filename), 'vs', 'code', 'electron-sandbox', 'workbench', 'workbench.html');
             fs.writeFileSync(htmlPath, originalHtml, 'utf-8');
 
             return true;
