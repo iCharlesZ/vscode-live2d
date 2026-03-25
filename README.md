@@ -2,11 +2,15 @@
 
 一个简单的Live2D看板娘插件，会跟随你的鼠标动作变化，写代码累了可以逗逗她哦。支持自定义设置live2d模型。
 
+注意：本仓库不包含任何模型素材，需自行导入模型运行，代码仅供学习参考。
+
+Live2D Inc.素材使用授权协议(https://www.live2d.com/eula/live2d-free-material-license-agreement_jp.html)
+
 GitHub: https://github.com/iCharlesZ/vscode-live2d
 
 VSCode Marketplace: https://marketplace.visualstudio.com/items?itemName=CharlesZ.vscode-live2d
 
-model library: https://github.com/iCharlesZ/vscode-live2d-models
+~~model library: https://github.com/iCharlesZ/vscode-live2d-models~~
 
 **If you want to use the English version, please select {"vscode-live2d.English": true}.**  English translation is not perfect, Please help me improve the translation.
 
